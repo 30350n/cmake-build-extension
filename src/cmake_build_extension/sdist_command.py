@@ -29,11 +29,11 @@ class GitSdistABC(abc.ABC, setuptools.command.sdist.sdist):
         specifying a list of files that are copied in the location of the setup.cfg.
         """
 
-        import setuptools_scm.integration
+        import setuptools_scm
 
         # Build the setuptools_scm configuration, containing useful info for the sdist
-        config: setuptools_scm.integration.Configuration = (
-            setuptools_scm.integration.Configuration.from_file(
+        config: setuptools_scm.Configuration = (
+            setuptools_scm.Configuration.from_file(
                 dist_name=self.distribution.metadata.name
             )
         )
